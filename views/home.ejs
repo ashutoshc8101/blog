@@ -1,0 +1,27 @@
+<%- contentFor('title') %>
+Blog
+
+<%- contentFor('content') %>
+
+<% for(var i=0;i<blogs.length;i++){ %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= blogs[i].Title %>
+    </div>
+    <div class="panel-body">
+      <h2><%= blogs[i].name %></h2>
+      <h5><%= blogs[i].email %></h5>
+      <hr>
+      <p class="lead">
+
+        <% if(blogs[i].Post.length > 99){
+          var post = blogs[i].Post.slice(0, 100) %>
+        <%= post %> ....
+        <% }else{ %>
+        <%= blogs[i].Post %>
+        <% }%>
+      </p>
+      <a href="/blog?id=<%= blogs[i]._id %>">More</a>
+    </div>
+  </div>
+<% } %>

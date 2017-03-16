@@ -1,0 +1,15 @@
+<%- contentFor('title') %>
+Blog - <%= blog.Title %>
+
+<%- contentFor('content') %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <%= blog.Title %>
+  </div>
+  <div class="panel-body">
+  <%= blog.Post %>
+  <h4>Author : <%= blog.name %></h4>
+  <h4>Email : <%= blog.email %></h4>
+  </div>
+</div>

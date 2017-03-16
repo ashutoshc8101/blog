@@ -1,0 +1,52 @@
+<%- contentFor('title') %>
+Publish
+
+<%- contentFor('content') %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Publish your blog
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10 col-md-offset-1">
+    <% if(errors){
+      for(var i=0;i<errors.length;i++){%>
+        <div class="alert alert-danger">
+          <%= errors[i] %>
+        </div>
+    <% } } %>
+    <form action="/publish" method="post" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="name" class="col-md-2 control-label">Name:</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="name" placeholder="name" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="col-md-2 control-label">Email:</label>
+        <div class="col-md-10">
+          <input type="email" class="form-control" name="email" placeholder="someone@domain.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="title" class="col-md-2 control-label">Title:</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="title" placeholder="MyBlog" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="blog" class="col-md-2 control-label">Blog:</label>
+        <div class="col-md-10">
+          <textarea class="form-control" name="blog" style="resize:none;height: 100px"></textarea>
+        </div>
+      </div>
+      <input type="submit" value="Publish" class="btn btn-primary" style="display:block; margin: 10px auto;">
+
+    </form>
+    </div>
+  </div>
+</div>
